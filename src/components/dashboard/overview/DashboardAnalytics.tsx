@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React from "react";
@@ -14,6 +15,8 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import { motion } from "framer-motion";
+import { Pie3DChart } from "../3Dcomponet/Pie3D";
+import { Bar3DChart } from "../3Dcomponet/Bars3D";
 
 const platformData = [
   { name: "Amazon", value: 400, color: "#915DFF" },
@@ -67,8 +70,8 @@ export function DashboardAnalytics() {
             Last 30 Days
           </span>
         </div>
-
-        <div className="h-[300px] w-full relative">
+        {/* 2d pie chart  */}
+        {/* <div className="h-[300px] w-full relative">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <defs>
@@ -95,8 +98,12 @@ export function DashboardAnalytics() {
               </Pie>
             </PieChart>
           </ResponsiveContainer>
-        </div>
+        </div> */}
 
+        {/* 3D Pie Chart */}
+        <div className="h-[300px] w-full">
+          <Pie3DChart />
+        </div>
         <div className="flex justify-center gap-6 mt-4">
           {platformData.map((item) => (
             <div key={item.name} className="flex items-center gap-2">
@@ -125,7 +132,9 @@ export function DashboardAnalytics() {
           Top Rated Product
         </h3>
 
-        <div className="h-110 w-full">
+        {/* 2d Bar Chart */}
+
+        {/* <div className="h-110 w-full">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={ratingData} margin={{ left: 50, bottom: 20 }}>
               <defs>
@@ -202,6 +211,11 @@ export function DashboardAnalytics() {
               />
             </BarChart>
           </ResponsiveContainer>
+        </div> */}
+
+        {/* 3D Bar Chart */}
+        <div className="h-110 w-full pb-30">
+          <Bar3DChart />
         </div>
       </motion.div>
     </div>
