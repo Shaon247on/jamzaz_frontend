@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 
 import { SkeletonLoader } from "@/components/sections/SkeletonLoader";
 import ProductCard, {
@@ -8,6 +8,7 @@ import ProductCard, {
 } from "@/components/dashboard/trendin- products/ProductCard";
 import FilterSection from "@/components/dashboard/trendin- products/FilterSection";
 import ProductNeonCard from "@/components/shared/ProductNeonCardProps";
+import TrendingProductsSkeleton from "@/components/dashboard/trendin- products/TrendingProductsSkeleton";
 
 const mockProducts: ProductProps[] = [
   {
@@ -48,6 +49,7 @@ export default function TrendingProductsPage() {
   }
 
   return (
+     <Suspense fallback={<TrendingProductsSkeleton/>}>
     <div className="min-h-screen bg-[#0a0c10] p-6 lg:p-10">
       {/* Header Info */}
       <div className="mb-10">
@@ -67,5 +69,6 @@ export default function TrendingProductsPage() {
         ))}
       </div>
     </div>
+    </Suspense>
   );
 }
