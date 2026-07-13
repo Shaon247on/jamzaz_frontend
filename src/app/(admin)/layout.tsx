@@ -23,7 +23,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
   // for the /admin/ URLs to work.
 
   return (
-    <div className="flex min-h-screen bg-gray-50">
+    <div className="flex min-h-screen bg-black">
       {/* Admin Sidebar */}
       <aside className="w-64 bg-gray-900 text-white p-6 min-h-screen sticky top-0">
         <h1 className="text-2xl font-bold mb-8 text-[#00D1FF]">Admin Panel</h1>

@@ -1,7 +1,4 @@
-/**
- * Navbar Component
- * Navigation bar shown in public layouts
- */
+
 "use client";
 
 import Link from "next/link";

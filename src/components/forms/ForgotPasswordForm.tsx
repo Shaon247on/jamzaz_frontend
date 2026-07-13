@@ -93,7 +93,7 @@ export function ForgotPasswordForm() {
                 )}
               />
 
-              <Button type="submit" disabled={isLoading} className="w-full">
+              <Button type="submit" variant={"primary"} disabled={isLoading} className="w-full h-12">
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -108,7 +108,7 @@ export function ForgotPasswordForm() {
         ) : (
           <div className="space-y-4">
             <p className="text-center text-gray-600">
-              Didn't receive the email? Check your spam folder or{" "}
+              Didn&apos;t receive the email? Check your spam folder or{" "}
               <button
                 onClick={() => {
                   setSubmitted(false);

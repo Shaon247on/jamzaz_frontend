@@ -1,6 +1,3 @@
-/**
- * Home Page
- */
 
 "use client";
 
@@ -8,7 +5,6 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { ArrowRight, TrendingUp, Shield, Zap } from "lucide-react";
-import { HeroSection } from "@/components/public/home/HeroSection";
 import { ProductsSection } from "@/components/public/home/ProductsSection";
 import { ProductInsightsSection } from "@/components/public/home/ProductInsightsSection";
 import { insightBlocksData } from "@/data/insightBlocksData";
@@ -19,6 +15,7 @@ import img4 from "../../../public/assets/pablic_assetes/home/image_4.png";
 import img5 from "../../../public/assets/pablic_assetes/home/image_5.png";
 import { CTASection } from "@/components/public/home/CTASection";
 import { FeaturesGridSection } from "@/components/public/home/FeaturesGridSection";
+import { HeroSection } from "@/components/public/home/HeroSection";
 
 // Sample products - Replace these with your actual product images
 const myProducts = [

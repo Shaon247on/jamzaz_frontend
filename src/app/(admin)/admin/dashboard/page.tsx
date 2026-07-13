@@ -78,7 +78,7 @@ export default function AdminDashboardPage() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4 }}
-        className="bg-white rounded-lg p-6"
+        className="bg-gray-800 rounded-lg p-6"
       >
         <h2 className="text-xl font-bold mb-4">System Status</h2>
         <div className="space-y-3">

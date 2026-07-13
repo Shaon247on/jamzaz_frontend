@@ -41,16 +41,16 @@ export default function AdminUsersPage() {
         animate={{ opacity: 1, y: 0 }}
       >
         <h1 className="text-3xl font-bold">User Management</h1>
-        <p className="text-gray-600 mt-2">Manage all platform users</p>
+        <p className="text-gray-700 mt-2">Manage all platform users</p>
       </motion.div>
 
       <motion.div
-        className="bg-white rounded-lg overflow-hidden shadow"
+        className="bg-gray-400 rounded-lg overflow-hidden shadow"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
         <table className="w-full">
-          <thead className="bg-gray-50 border-b">
+          <thead className="bg-gray-400 border-b">
             <tr>
               <th className="px-6 py-3 text-left text-sm font-semibold">
                 Name
@@ -73,7 +73,7 @@ export default function AdminUsersPage() {
             {users.map((user) => (
               <motion.tr
                 key={user.id}
-                className="border-b hover:bg-gray-50 transition-colors"
+                className="border-b hover:bg-gray-800 transition-colors"
                 whileHover={{ backgroundColor: "rgba(249, 250, 251, 1)" }}
               >
                 <td className="px-6 py-4">

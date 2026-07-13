@@ -1,36 +1,3 @@
-/**
- * Trending Products Page
- */
-
-// "use client";
-
-// import { motion } from "framer-motion";
-// import { Card } from "@/components/ui/card";
-// import { SkeletonLoader } from "@/components/sections/SkeletonLoader";
-// import { Product } from "@/types/product.types";
-// import { useState } from "react";
-// import FilterSection from "@/components/dashboard/trendin- products/FilterSection";
-// import ProductCard, {
-//   ProductProps,
-// } from "@/components/dashboard/trendin- products/ProductCard";
-
-// // // Mock data
-
-// export default function TrendingProductsPage() {
-//   const [isLoading, setIsLoading] = useState(false);
-
-//   if (isLoading) {
-//     return <SkeletonLoader count={6} />;
-//   }
-
-//   return (
-//     <div className="">
-//       <FilterSection></FilterSection>
-//       <ProductCard></ProductCard>
-//     </div>
-//   );
-// }
-
 "use client";
 
 import { useState } from "react";
@@ -40,6 +7,7 @@ import ProductCard, {
   ProductProps,
 } from "@/components/dashboard/trendin- products/ProductCard";
 import FilterSection from "@/components/dashboard/trendin- products/FilterSection";
+import ProductNeonCard from "@/components/shared/ProductNeonCardProps";
 
 const mockProducts: ProductProps[] = [
   {
@@ -95,7 +63,7 @@ export default function TrendingProductsPage() {
       {/* 2. Cards Area - Responsive Grid */}
       <div className="mt-12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
         {mockProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
+          <ProductNeonCard key={product.id} product={product} />
         ))}
       </div>
     </div>

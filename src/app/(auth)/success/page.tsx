@@ -29,7 +29,7 @@ export default function SuccessPage() {
       <div>
         <h1 className="text-2xl font-bold">Success!</h1>
         <p className="text-gray-600 mt-2">
-          Your account is now ready. Let's get started!
+          Your account is now ready. Let&apos;s get started!
         </p>
       </div>
 

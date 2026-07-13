@@ -77,9 +77,10 @@ export default function VerifyOTPPage() {
           </div>
 
           <Button
+          variant={"primary"}
             onClick={handleVerifyOTP}
             disabled={isLoading}
-            className="w-full"
+            className="w-full h-12"
           >
             {isLoading ? (
               <>
@@ -92,13 +93,14 @@ export default function VerifyOTPPage() {
           </Button>
         </div>
 
-        <button
+        <Button
+        variant={"pink"}
           onClick={() => router.back()}
-          className="flex items-center justify-center gap-2 text-blue-600 hover:underline"
+          className="w-full h-12"
         >
           <ArrowLeft size={16} />
           Go back
-        </button>
+        </Button>
       </div>
     </motion.div>
   );

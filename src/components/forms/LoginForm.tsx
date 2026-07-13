@@ -1,7 +1,3 @@
-/**
- * Login Form Component
- * Form with validation for user login
- */
 
 "use client";
 
@@ -121,7 +117,7 @@ export function LoginForm() {
               </Link>
             </div>
 
-            <Button type="submit" disabled={isLoading} className="w-full">
+            <Button type="submit" variant={"primary"} disabled={isLoading} className="w-full h-12 text-base">
               {isLoading ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -135,7 +131,7 @@ export function LoginForm() {
         </Form>
 
         <p className="text-center text-sm text-gray-600">
-          Don't have an account?{" "}
+          Don&apos;t have an account?{" "}
           <Link
             href="/signup"
             className="text-blue-600 hover:underline font-medium"

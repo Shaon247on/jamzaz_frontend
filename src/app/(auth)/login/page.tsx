@@ -1,6 +1,3 @@
-/**
- * Login Page
- */
 
 import { LoginForm } from "@/components/forms/LoginForm";
 

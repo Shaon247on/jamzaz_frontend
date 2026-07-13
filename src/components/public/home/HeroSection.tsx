@@ -9,6 +9,7 @@ import {
   GetStartedButton,
   GhostButton,
 } from "@/components/buttons/ButtonVariants";
+import { TrendingUp } from "lucide-react";
 
 export function HeroSection() {
   return (
@@ -127,13 +128,13 @@ export function HeroSection() {
             className="relative h-full"
           >
             <div className="relative w-full h-full rounded-2xl overflow-hidden p-1">
-              <div className="w-full h-full rounded-2xl overflow-hidden flex items-center justify-center">
+              <div className="relative z-10 flex h-full w-full items-center justify-center overflow-hidden rounded-2xl bg-transparent">
                 <Image
-                  src={hero_image}
+                  src="/hero_Image.png"
                   alt="TrendBurst Dashboard"
                   width={600}
                   height={600}
-                  className="w-full h-full object-cover"
+                  className="object-cover"
                 />
               </div>
             </div>

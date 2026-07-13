@@ -119,7 +119,7 @@ export default function ResetPasswordPage() {
               )}
             />
 
-            <Button type="submit" disabled={isLoading} className="w-full">
+            <Button type="submit" variant={"primary"} disabled={isLoading} className="w-full h-12">
               {isLoading ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
