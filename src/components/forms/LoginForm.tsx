@@ -43,9 +43,9 @@ export function LoginForm() {
 
   async function onSubmit(data: LoginFormData) {
     try {
-      setIsLoading(true);
-      await login(data);
-      router.push("/overview");
+      // setIsLoading(true);
+      // await login(data);
+      router.push("/dashboard");
     } catch (error) {
       console.error("Login error:", error);
     } finally {
