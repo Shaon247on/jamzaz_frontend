@@ -159,8 +159,12 @@ export default async function ProductManagementSection({
           </div>
           <div className="mt-2 flex gap-4 sm:mt-0">
             <div className="text-right">
-              <div className="text-sm text-muted-foreground">Total Products</div>
-              <div className="text-lg font-semibold text-white">{totalProducts}</div>
+              <div className="text-sm text-muted-foreground">
+                Total Products
+              </div>
+              <div className="text-lg font-semibold text-white">
+                {totalProducts}
+              </div>
             </div>
             <div className="text-right">
               <div className="text-sm text-muted-foreground">Categories</div>
@@ -175,26 +179,51 @@ export default async function ProductManagementSection({
       {/* Search + category filter */}
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div className="w-full lg:max-w-sm">
-          <SearchParamsInput paramName="search" placeholder="Search products..." />
+          <Suspense
+            fallback={
+              <div className="h-11 w-full animate-pulse rounded-lg bg-white/5" />
+            }
+          >
+            <SearchParamsInput
+              paramName="search"
+              placeholder="Search products..."
+            />
+          </Suspense>
         </div>
-        <FilterButtons
-          options={CATEGORY_OPTIONS}
-          paramName="category"
-          defaultValue="all"
-        />
+        <Suspense
+          fallback={
+            <div className="h-11 w-40 animate-pulse rounded-lg bg-white/5" />
+          }
+        >
+          <FilterButtons
+            options={CATEGORY_OPTIONS}
+            paramName="category"
+            defaultValue="all"
+          />
+        </Suspense>
       </div>
 
       {/* Table with Suspense */}
       <Suspense fallback={<ProductTableSkeleton />}>
-        <ProductTable 
-          data={paged} 
+        <ProductTable
+          data={paged}
           totalItems={filtered.length}
-          categories={CATEGORY_OPTIONS.map(opt => opt.value).filter(v => v !== "all")}
+          categories={CATEGORY_OPTIONS.map((opt) => opt.value).filter(
+            (v) => v !== "all",
+          )}
         />
       </Suspense>
 
-      {/* Pagination */}
-      <SearchParamsPagination totalPages={totalPages} paramName="page" />
+      {/* Pagination - Also needs Suspense */}
+      <Suspense
+        fallback={
+          <div className="flex justify-center">
+            <div className="h-9 w-40 animate-pulse rounded-lg bg-white/5" />
+          </div>
+        }
+      >
+        <SearchParamsPagination totalPages={totalPages} paramName="page" />
+      </Suspense>
     </div>
   );
 }

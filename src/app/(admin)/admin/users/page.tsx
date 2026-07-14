@@ -130,13 +130,16 @@ export default async function UserManagementSection({
               User Management
             </h1>
             <p className="mt-1 text-sm text-muted-foreground">
-              Manage all registered users, their subscriptions, and account status.
+              Manage all registered users, their subscriptions, and account
+              status.
             </p>
           </div>
           <div className="mt-2 flex gap-4 sm:mt-0">
             <div className="text-right">
               <div className="text-sm text-muted-foreground">Total Users</div>
-              <div className="text-lg font-semibold text-white">{totalUsers}</div>
+              <div className="text-lg font-semibold text-white">
+                {totalUsers}
+              </div>
             </div>
             <div className="text-right">
               <div className="text-sm text-muted-foreground">Active</div>
@@ -151,13 +154,28 @@ export default async function UserManagementSection({
       {/* Search + status filter */}
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div className="w-full lg:max-w-sm">
-          <SearchParamsInput paramName="search" placeholder="Search users..." />
+          <Suspense
+            fallback={
+              <div className="h-11 w-full animate-pulse rounded-lg bg-white/5" />
+            }
+          >
+            <SearchParamsInput
+              paramName="search"
+              placeholder="Search users..."
+            />
+          </Suspense>
         </div>
-        <FilterButtons
-          options={FILTER_OPTIONS}
-          paramName="status"
-          defaultValue="all"
-        />
+        <Suspense
+          fallback={
+            <div className="h-11 w-40 animate-pulse rounded-lg bg-white/5" />
+          }
+        >
+          <FilterButtons
+            options={FILTER_OPTIONS}
+            paramName="status"
+            defaultValue="all"
+          />
+        </Suspense>
       </div>
 
       {/* Table with Suspense */}
@@ -165,8 +183,16 @@ export default async function UserManagementSection({
         <UserTable data={paged} totalItems={filtered.length} />
       </Suspense>
 
-      {/* Pagination */}
-      <SearchParamsPagination totalPages={totalPages} paramName="page" />
+      {/* ✅ FIX: Wrap Pagination in Suspense */}
+      <Suspense
+        fallback={
+          <div className="flex justify-center">
+            <div className="h-9 w-40 animate-pulse rounded-lg bg-white/5" />
+          </div>
+        }
+      >
+        <SearchParamsPagination totalPages={totalPages} paramName="page" />
+      </Suspense>
     </div>
   );
 }

@@ -201,37 +201,64 @@ export default async function SubscriptionManagementSection({
         </div>
       </div>
 
-      {/* Search + Filters */}
+      {/* Search + Filters - ALL components using useSearchParams() must be wrapped */}
       <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
         <div className="w-full lg:max-w-sm">
-          <SearchParamsInput paramName="search" placeholder="Search by email..." />
+          {/* ✅ FIX: Wrap SearchParamsInput in Suspense */}
+          <Suspense
+            fallback={
+              <div className="h-11 w-full animate-pulse rounded-lg bg-white/5" />
+            }
+          >
+            <SearchParamsInput paramName="search" placeholder="Search by email..." />
+          </Suspense>
         </div>
         <div className="flex flex-wrap items-center gap-3">
-          <GlobalSelectFilter
-            options={PLAN_OPTIONS}
-            paramName="plan"
-            defaultValue="all"
-            placeholder="All Plans"
-          />
-          <GlobalSelectFilter
-            options={STATUS_OPTIONS}
-            paramName="status"
-            defaultValue="all"
-            placeholder="All Status"
-          />
+          <Suspense
+            fallback={
+              <div className="h-11 w-40 animate-pulse rounded-lg bg-white/5" />
+            }
+          >
+            <GlobalSelectFilter
+              options={PLAN_OPTIONS}
+              paramName="plan"
+              defaultValue="all"
+              placeholder="All Plans"
+            />
+          </Suspense>
+          <Suspense
+            fallback={
+              <div className="h-11 w-40 animate-pulse rounded-lg bg-white/5" />
+            }
+          >
+            <GlobalSelectFilter
+              options={STATUS_OPTIONS}
+              paramName="status"
+              defaultValue="all"
+              placeholder="All Status"
+            />
+          </Suspense>
         </div>
       </div>
 
       {/* Table with Suspense */}
       <Suspense fallback={<SubscriptionTableSkeleton />}>
-        <SubscriptionTable 
-          data={paged} 
+        <SubscriptionTable
+          data={paged}
           totalItems={filtered.length}
         />
       </Suspense>
 
-      {/* Pagination */}
-      <SearchParamsPagination totalPages={totalPages} paramName="page" />
+      {/* ✅ FIX: Wrap Pagination in Suspense */}
+      <Suspense
+        fallback={
+          <div className="flex justify-center">
+            <div className="h-9 w-40 animate-pulse rounded-lg bg-white/5" />
+          </div>
+        }
+      >
+        <SearchParamsPagination totalPages={totalPages} paramName="page" />
+      </Suspense>
     </div>
   );
 }
