@@ -130,7 +130,7 @@ export function HeroSection() {
             <div className="relative w-full h-full rounded-2xl overflow-hidden p-1">
               <div className="relative z-10 flex h-full w-full items-center justify-center overflow-hidden rounded-2xl bg-transparent">
                 <Image
-                  src="/hero_Image.png"
+                  src="/assets/hero_Image.png"
                   alt="TrendBurst Dashboard"
                   width={600}
                   height={600}
