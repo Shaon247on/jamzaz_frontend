@@ -47,28 +47,28 @@ axiosInstance.interceptors.response.use(
   (error: AxiosError) => {
     const statusCode = error.response?.status;
 
-    if (statusCode === 401) {
-      // Token expired or unauthorized
-      if (typeof window !== "undefined") {
-        localStorage.removeItem("accessToken");
-        localStorage.removeItem("refreshToken");
-        window.location.href = "/login";
-      }
-      toast.error("Session expired. Please login again.");
-    } else if (statusCode === 403) {
-      toast.error("You do not have permission to access this resource.");
-    } else if (statusCode === 404) {
-      toast.error("Resource not found.");
-    } else if (statusCode && statusCode >= 500) {
-      toast.error("Server error. Please try again later.");
-    } else if (error.message === "Network Error") {
-      toast.error("Network error. Please check your connection.");
-    } else {
-      const errorMessage =
-        (error.response?.data as { message?: string })?.message ||
-        "An error occurred";
-      toast.error(errorMessage);
-    }
+    // if (statusCode === 401) {
+    //   // Token expired or unauthorized
+    //   if (typeof window !== "undefined") {
+    //     localStorage.removeItem("accessToken");
+    //     localStorage.removeItem("refreshToken");
+    //     window.location.href = "/login";
+    //   }
+    //   console.error("Session expired. Please login again.");
+    // } else if (statusCode === 403) {
+    //   console.error("You do not have permission to access this resource.");
+    // } else if (statusCode === 404) {
+    //   console.error("Resource not found.");
+    // } else if (statusCode && statusCode >= 500) {
+    //   console.error("Server error. Please try again later.");
+    // } else if (error.message === "Network Error") {
+    //   console.error("Network error. Please check your connection.");
+    // } else {
+    //   const errorMessage =
+    //     (error.response?.data as { message?: string })?.message ||
+    //     "An error occurred";
+    //   console.error(errorMessage);
+    // }
 
     return Promise.reject(error);
   },

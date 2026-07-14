@@ -1,107 +1,44 @@
-/**
- * Admin Dashboard Page
- */
+import { StatCard } from "@/components/dashboard/admin/overview/StatCard";
+import { RevenueTrendChart } from "@/components/dashboard/admin/overview/RevenueTrendChart";
+import { UsersBarChart } from "@/components/dashboard/admin/overview/UsersBarChart";
+import { RecentActivity } from "@/components/dashboard/admin/overview/RecentActivity";
 
-"use client";
-
-import { motion } from "framer-motion";
-import { Card } from "@/components/ui/card";
-import { Users, ShoppingCart, TrendingUp, AlertCircle } from "lucide-react";
-
-const adminStats = [
-  { label: "Total Users", value: "1,234", icon: Users, color: "text-blue-600" },
+const stats = [
   {
-    label: "Total Products",
-    value: "5,678",
-    icon: ShoppingCart,
-    color: "text-green-600",
+    title: "Total Revenue",
+    value: "₹15,00,000",
+    trend: { direction: "up" as const, value: "4.8%", label: "from last month" },
+    sparkline: [40, 55, 35, 60, 50, 70, 65, 80],
   },
   {
-    label: "Active Trends",
-    value: "45",
-    icon: TrendingUp,
-    color: "text-purple-600",
+    title: "Total Products",
+    value: "7,506",
+    trend: { direction: "down" as const, value: "3.5%", label: "from last week" },
+    sparkline: [60, 50, 55, 45, 50, 40, 45, 42],
   },
-  { label: "Alerts", value: "12", icon: AlertCircle, color: "text-red-600" },
+  {
+    title: "Total Clicks",
+    value: "17,058",
+    trend: { direction: "up" as const, value: "9.3%", label: "from yesterday" },
+    sparkline: [30, 45, 40, 60, 55, 75, 70, 90],
+  },
 ];
 
-export default function AdminDashboardPage() {
+export default function AdminOverviewPage() {
   return (
-    <div className="space-y-8">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-      >
-        <h1 className="text-3xl font-bold">Admin Dashboard</h1>
-        <p className="text-gray-600 mt-2">System overview and management</p>
-      </motion.div>
+    <div className="space-y-6  -mt-12 md:-mt-20">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-3">
+        {stats.map((stat) => (
+          <StatCard key={stat.title} {...stat} />
+        ))}
+      </div>
 
-      <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-        variants={{
-          hidden: { opacity: 0 },
-          visible: {
-            opacity: 1,
-            transition: { staggerChildren: 0.1 },
-          },
-        }}
-        initial="hidden"
-        animate="visible"
-      >
-        {adminStats.map((stat, index) => {
-          const Icon = stat.icon;
-          return (
-            <motion.div
-              key={stat.label}
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0 },
-              }}
-              transition={{ delay: index * 0.1 }}
-            >
-              <Card className="p-6">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-gray-600 text-sm">{stat.label}</p>
-                    <p className="text-3xl font-bold mt-2">{stat.value}</p>
-                  </div>
-                  <Icon className={`${stat.color}`} size={32} />
-                </div>
-              </Card>
-            </motion.div>
-          );
-        })}
-      </motion.div>
+      <div className="grid grid-cols-1 gap-5 xl:grid-cols-[1.6fr_1fr]">
+        <RevenueTrendChart />
+        <UsersBarChart />
+      </div>
 
-      {/* System Status */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4 }}
-        className="bg-gray-800 rounded-lg p-6"
-      >
-        <h2 className="text-xl font-bold mb-4">System Status</h2>
-        <div className="space-y-3">
-          <div className="flex items-center justify-between py-2 border-b">
-            <span>API Server</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
-              Online
-            </span>
-          </div>
-          <div className="flex items-center justify-between py-2 border-b">
-            <span>Database</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
-              Healthy
-            </span>
-          </div>
-          <div className="flex items-center justify-between py-2">
-            <span>Cache Service</span>
-            <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
-              Running
-            </span>
-          </div>
-        </div>
-      </motion.div>
+      <RecentActivity />
     </div>
   );
 }

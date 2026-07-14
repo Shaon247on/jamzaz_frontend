@@ -61,3 +61,12 @@ export interface ActivityLogsResponse {
   success: boolean;
   data: ActivityLog[];
 }
+
+
+export interface ProductRow {
+  id: string;
+  name: string;
+  category: string;
+  platform: string;
+  viewer: number;
+}
