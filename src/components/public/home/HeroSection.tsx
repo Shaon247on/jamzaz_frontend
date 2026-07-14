@@ -71,7 +71,7 @@ export function HeroSection() {
                 <span className="text-white">Discover </span>
 
                 {/* ✅ Clean sharp gradient text */}
-                <span className="inline-block bg-gradient-to-r from-cyan-400 via-purple-500 to-magenta-500 bg-clip-text text-transparent [text-rendering:optimizeLegibility]">
+                <span className="inline-block bg-linear-to-r from-cyan-400 via-purple-500 to-magenta-500 bg-clip-text text-transparent [text-rendering:optimizeLegibility]">
                   Trending
                 </span>
 
