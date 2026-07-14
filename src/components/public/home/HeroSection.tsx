@@ -4,12 +4,11 @@ import { motion } from "framer-motion";
 
 import Image from "next/image";
 
-import hero_image from "../../../../public/assets/pablic_assetes/home/hero_home.png";
+import hero_image from "../../../../public/assets/hero_image.png";
 import {
   GetStartedButton,
   GhostButton,
 } from "@/components/buttons/ButtonVariants";
-import { TrendingUp } from "lucide-react";
 
 export function HeroSection() {
   return (
@@ -130,7 +129,7 @@ export function HeroSection() {
             <div className="relative w-full h-full rounded-2xl overflow-hidden p-1">
               <div className="relative z-10 flex h-full w-full items-center justify-center overflow-hidden rounded-2xl bg-transparent">
                 <Image
-                  src="/assets/hero_Image.png"
+                  src={hero_image}
                   alt="TrendBurst Dashboard"
                   width={600}
                   height={600}
