@@ -186,7 +186,7 @@ export const ProductInsightsSection = ({
   };
 
   return (
-    <section className="w-full pt-20 lg:pt-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
+    <section className="w-full pt-20 lg:pt-20 px-4 sm:px-6 lg:px-8 bg-linear-to-b from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden">
       {/* Background gradient glows */}
       <div className="absolute inset-0 pointer-events-none -z-10">
         <div className="absolute -top-40 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl opacity-30" />

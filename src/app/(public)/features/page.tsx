@@ -14,10 +14,9 @@ import {
 
 import walmartLogo from "../../../../public/assets/pablic_assetes/fetures/platform1.png";
 import amazonLogo from "../../../../public/assets/pablic_assetes/fetures/platform2.png";
-import shopifyLogo from "../../../../public/assets/pablic_assetes/fetures/platform3.png";
+import ebayLogo from "../../../../public/assets/pablic_assetes/fetures/ebay.png";
 import { ShoppingBag, Search, Zap } from "lucide-react";
 import { FeaturesCtaSection } from "@/components/public/features/FeaturesCtaSection";
-import BuiltForClaritySection from "@/components/public/about/BuiltForClaritySection";
 
 const featureList = [
   "Real-time product trend tracking",
@@ -49,9 +48,9 @@ const platforms = [
   },
   {
     id: 3,
-    image: shopifyLogo,
-    alt: "Shopify Logo",
-    title: "Shopify",
+    image: ebayLogo,
+    alt: "Ebay Logo",
+    title: "Ebay",
     description:
       "Discover listing performance, pricing data, and demand patterns from an active resale marketplace.",
   },

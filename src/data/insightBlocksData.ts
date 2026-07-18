@@ -4,9 +4,9 @@
  */
 
 import { InsightBlockProps } from "@/components/public/home/ProductInsightsSection";
-import image1 from "../../public/assets/pablic_assetes/home/ReimagineProduct1.png";
-import image2 from "../../public/assets/pablic_assetes/home/ReimagineProduct2.png";
-import image3 from "../../public/assets/pablic_assetes/home/ReimagineProduct3.jpg";
+import image1 from "../../public/assets/walmart.jpg";
+import image2 from "../../public/assets/amazon.jpg";
+import image3 from "../../public/assets/ebay.jpg";
 import amazonSvg from "../../public/assets/pablic_assetes/home/amazan_svg.svg";
 
 /**
@@ -41,7 +41,7 @@ export const insightBlocksData: InsightBlockProps[] = [
     imageAlt: "eBay Overview",
     title: "eBay Overview",
     titleHighlight: "eBay",
-    titleHighlightColor: "text-purple-400",
+     titleHighlightColor: "text-[#0066CC]",
     description:
       "Analyze marketplace activity, pricing trends, and sales opportunities with comprehensive data visualization and detailed reporting.",
   },
