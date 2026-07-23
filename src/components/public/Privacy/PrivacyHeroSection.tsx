@@ -104,7 +104,7 @@ export function PrivacyHeroSection() {
 
           {/* Main Description */}
           <p className="text-gray-400 text-lg md:text-xl max-w-4xl mb-16 leading-relaxed">
-            We collect marketplace data from Shopify, Amazon, and eBay to
+            We collect marketplace data from Walmart, Amazon, and eBay to
             provide accurate trends, performance insights, and a clearer
             understanding of market behavior for businesses.
           </p>

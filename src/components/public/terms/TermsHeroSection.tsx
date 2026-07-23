@@ -94,7 +94,7 @@ export function TermsHeroSection() {
           </div>
 
           <p className="text-gray-400 text-lg md:text-xl max-w-4xl mb-16 leading-relaxed">
-            TrendBurst provides marketplace insights and analytics for Shopify,
+            TrendBurst provides marketplace insights and analytics for Walmart,
             Amazon, and eBay. Our platform is designed to help sellers make
             informed decisions based on market data and trends.
           </p>

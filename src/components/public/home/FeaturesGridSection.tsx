@@ -51,7 +51,7 @@ const features: FeatureCard[] = [
     icon: <Clock className="w-8 h-8 text-cyan-400" />,
     title: "Real-Time Updates",
     description:
-      "Get instant notifications from News from Amazon, eBay, Shopify",
+      "Get instant notifications from News from Amazon, eBay, Walmart",
   },
   {
     id: 6,

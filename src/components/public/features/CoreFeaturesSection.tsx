@@ -24,7 +24,7 @@ const coreFeatures: CoreFeature[] = [
     icon: <TrendingUp className="w-6 h-6" />,
     title: "Marketplace Insights",
     description:
-      "Monitor real-time activity across Shopify, Amazon, and eBay with comprehensive data analysis",
+      "Monitor real-time activity across Walmart, Amazon, and eBay with comprehensive data analysis",
     iconColor: "bg-cyan-500/30",
   },
   {

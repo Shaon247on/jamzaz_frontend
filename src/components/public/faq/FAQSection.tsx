@@ -16,13 +16,13 @@ const faqData: FAQItem[] = [
     id: "item-1",
     question: "What does this platform do?",
     answer:
-      "This platform provides clear and reliable insights into major online marketplaces, helping users understand trends, pricing patterns, and overall platform performance across Shopify, Amazon, and eBay. It's designed to give a quick, high-level view of market activity so you can make more informed decisions with confidence.",
+      "This platform provides clear and reliable insights into major online marketplaces, helping users understand trends, pricing patterns, and overall platform performance across Walmart, Amazon, and eBay. It's designed to give a quick, high-level view of market activity so you can make more informed decisions with confidence.",
   },
   {
     id: "item-2",
     question: "Which marketplaces are supported?",
     answer:
-      "We currently support major e-commerce platforms including Shopify, Amazon, eBay, WooCommerce, and BigCommerce. Our system continuously analyzes millions of products across these platforms to provide you with comprehensive market insights and competitive analysis in real-time.",
+      "We currently support major e-commerce platforms including Walmart, Amazon, eBay, WooCommerce, and BigCommerce. Our system continuously analyzes millions of products across these platforms to provide you with comprehensive market insights and competitive analysis in real-time.",
   },
   {
     id: "item-3",

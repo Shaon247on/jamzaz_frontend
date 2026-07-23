@@ -92,7 +92,7 @@ export function HeroSection() {
               className="text-lg text-gray-300 leading-relaxed max-w-lg"
             >
               Real-time insights into the trending products across Amazon, eBay,
-              and Shopify. Make data-driven decisions for your drop-shipping
+              and Walmart. Make data-driven decisions for your drop-shipping
               business.
             </motion.p>
 

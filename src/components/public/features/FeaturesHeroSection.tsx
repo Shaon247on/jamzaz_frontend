@@ -66,7 +66,7 @@ export function FeaturesHeroSection() {
           >
             Transform raw marketplace data into actionable insights. Monitor
             trends, analyze performance, and make data-driven decisions across
-            Shopify, Amazon, and eBay
+            Walmart, Amazon, and eBay
           </motion.p>
 
           <motion.div

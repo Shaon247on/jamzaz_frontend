@@ -20,7 +20,7 @@ const pillars = [
   {
     title: "Platform Performance",
     description:
-      "Visibility into performance metrics across Shopify, Amazon, eBay",
+      "Visibility into performance metrics across Walmart, Amazon, eBay",
     icon: Eye,
   },
   {

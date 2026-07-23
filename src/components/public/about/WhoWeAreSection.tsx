@@ -31,7 +31,7 @@ export default function WhoWeAreSection() {
           <div className="space-y-6 text-gray-400 text-lg leading-relaxed max-w-xl">
             <p>
               TrendBurst is a marketplace insights hub providing key data and
-              trends from Shopify, Amazon, and eBay.
+              trends from Walmart, Amazon, and eBay.
             </p>
             <p>
               Our goal is to help businesses track performance, monitor pricing
